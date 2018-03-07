@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 body {
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,10 +11,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar {
   box-shadow: 0px 1px 3px #2a2a2a;
-  background-color: #fcfcfc;
+  background: image_url('dust_scratches.png');
 }
 
 .logofont {
   font-family: 'Itim', cursive;
   font-size: 3rem;
+  margin: 0 20px 0 0;
+}
+
+a:hover {
+  text-decoration: none;
 }
