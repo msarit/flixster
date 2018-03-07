@@ -23,3 +23,27 @@ h1, h2, h3, h4, h5, h6 {
 a:hover {
   text-decoration: none;
 }
+
+.hero {
+  background: image_url('hero_image1_full.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 450px;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.frosty {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 20px 0 20px 0;
+  position: absolute;
+  margin-top: 50px;
+  border: 2px black solid;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.btn {
+  border-radius: 0;
+}
