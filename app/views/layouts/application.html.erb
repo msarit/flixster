@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flixster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnStream</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Itim' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to 'LearnStream', root_path, class: 'logofont' %>
+
+      <div class="collapse navbar-collapse right-align" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item">
+            <%= link_to 'See all Courses', '#' %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            Log In
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<% if notice.present? %>
+<p class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
     <%= yield %>
   </body>
 </html>
