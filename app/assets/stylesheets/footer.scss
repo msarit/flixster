@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-content-container {
+  flex: 1;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: rgba(36,32,33,0.9);
+  color: white;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  padding: 10px 0px;
+  margin-top: 30px;
+}
+
+#footer a {
+  color: white;
+}
+
+.footer-cont {
+  padding-top: 15px;
+}

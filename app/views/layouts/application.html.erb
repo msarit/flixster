@@ -11,41 +11,68 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to 'NowYouCook!', root_path, class: 'logofont' %>
+    <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%= link_to 'NowYouCook!', root_path, class: 'logofont' %>
 
-      <div class="collapse navbar-collapse right-align" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-link">
-            <%= link_to 'See all Courses', '#' %>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-          <li class="nav-link">
-            <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+        <div class="collapse navbar-collapse right-align" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
             <li class="nav-link">
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-          <li class="nav-link">
-            <%= link_to 'Register', new_user_registration_path %> </li>
+              <%= link_to 'See all Courses', '#' %>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
             <li class="nav-link">
-              <%= link_to 'Log In', new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
+              <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+              <li class="nav-link">
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+            <li class="nav-link">
+              <%= link_to 'Register', new_user_registration_path %> </li>
+              <li class="nav-link">
+                <%= link_to 'Log In', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
 
-<% if notice.present? %>
-<p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-<p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <% if notice.present? %>
+  <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert.present? %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
-    <%= yield %>
+      <%= yield %>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="row text-center footer-cont">
+        
+        <div class="col-12 col-sm">
+          <h5>Instructors</h5>
+          </div>
+
+          <div class="col-12 col-sm">
+          <h5>About</h5>
+          </div>
+
+          <div class="col-12 col-sm">
+          <h5>Contact</h5>
+          </div>
+
+          <div class="col-12 col-sm">
+          <h5>Social</h5>
+          </div>
+        
+        </div>
+    </div>
+  </div>
+
   </body>
 </html>
