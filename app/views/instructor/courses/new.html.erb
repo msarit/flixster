@@ -1,0 +1,11 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Add A New Course</h1>
+  <br />
+  <%= simple_form_for @course, url: instructor_courses_path do |f| %>
+    <%= f.input :title, placeholder: 'e.g. Italian Cuisine' %>
+    <%= f.input :description, rows: 3, placeholder: 'e.g. A course teaching the basics of preparing common dishes from Italy' %>
+    <%= f.input :cost, placeholder: 'e.g. $250.00' %>
+<br />
+<%= f.submit 'Create', class: 'btn btn-success' %>
+<% end %>
+</div>
