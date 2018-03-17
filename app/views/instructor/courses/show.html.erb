@@ -11,9 +11,18 @@
       <% @course.sections.each do |section| %>
       <li>
         <%= section.title %>
+        <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
+          <ul>
+              <% section.lessons.each do |lesson| %>
+              <li>
+              <strong><%= lesson.title %></strong>
+              -
+              <%= lesson.subtitle %>
+              </li>
+              <% end %> 
+          </ul>
+        <br class="clr" />
       </li>
       <% end %>
     </ul>
-  <p class="text-center"><%= @course.description %></p>
-  <p class="text-center"><%= @course.cost %></p>
 </div>

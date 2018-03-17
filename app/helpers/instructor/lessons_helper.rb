@@ -1,0 +1,2 @@
+module Instructor::LessonsHelper
+end
