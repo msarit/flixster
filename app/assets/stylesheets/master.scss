@@ -83,3 +83,7 @@ p.alert {
 .clr {
   clear: both;
 }
+
+label.control-label.file.optional, label.control-label.file.required {
+  display: none;
+}

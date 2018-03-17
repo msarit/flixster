@@ -4,7 +4,9 @@
   <%= simple_form_for @course, url: instructor_courses_path do |f| %>
     <%= f.input :title, placeholder: 'e.g. Italian Cuisine' %>
     <%= f.input :description, rows: 3, placeholder: 'e.g. A course teaching the basics of preparing common dishes from Italy' %>
-    <%= f.input :cost, placeholder: 'e.g. $250.00' %>
+    <%= f.label 'Add An Image' %><br />
+    <%= f.input :image %>
+    <%= f.input :cost, placeholder: 'e.g. 250' %>
 <br />
 <%= f.submit 'Create', class: 'btn btn-success' %>
 <% end %>

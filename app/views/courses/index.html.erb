@@ -10,6 +10,10 @@
     <%= course.description %>
   </div>
   <div class="col-sm-4 col-12 text-center">
+    <% if course.image.present? %>
+      <%= image_tag course.image, class: 'img-fluid' %>
+    <% end %>
+    <br /><br />
     <%= link_to 'More Details...', course_path(course), class: 'btn btn-primary btn-large' %>
   </div>
 </div>
