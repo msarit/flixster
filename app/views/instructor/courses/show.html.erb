@@ -1,14 +1,14 @@
 <div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= @course.title %></h1>
+  <h1 class="text-center"><%= current_course.title %></h1>
   <br />
-  <%= link_to 'Preview As Student...', course_path(@course), class: 'btn btn-warning float-right' %>
+  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
   <br class="clr" />
     <div class="text-center">
-      <%= link_to 'Add a new section...', new_instructor_course_section_path(@course), class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
     </div>
 
     <ul>
-      <% @course.sections.each do |section| %>
+      <% current_course.sections.each do |section| %>
       <li>
         <%= section.title %>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
