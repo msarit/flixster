@@ -1,7 +1,9 @@
 <div class="booyah-box col-10 offset-1">
   <h1><%= @course.title %></h1>
   <br />
+    
     <div class="row">
+      
       <div class="col-sm-2 col-12 text-center">
         <span class="badge badge-default">
           TUITION: <%= number_to_currency @course.cost %>
@@ -11,8 +13,25 @@
         <p><%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %></p>
         <% end %>
       </div>
-    <div class="col-sm-10 col-12 float-right">
-      <%= @course.description %>
+      
+      <div class="col-sm-10 col-12 float-right">
+        <%= @course.description %>
+      </div>
+      
+      <div class="col-12">
+        <% @course.sections.each do |section| %>
+          <div class="section">
+          <h3><%= section.title %></h3>
+            <% section.lessons.each do |lesson| %>
+              <div class="lesson">
+                <%= link_to lesson_path(lesson) do %>
+              <strong><%= lesson.title %></strong>
+              -
+              <%= lesson.subtitle %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    </div>
-</div>
