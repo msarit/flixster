@@ -22,10 +22,26 @@
         <p><%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %></p>
         <% end %>
 
-        <% if current_user && current_user.enrolled_in?(@course) %>
+        <% if current_user %>
+        <% if current_user.enrolled_in?(@course) %>
           <h3 class="badge badge-info">You Are Enrolled!</h3>
         <% else %>
+        <% if @course.free? %>
         <%= link_to 'Enroll Now', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+        <% else %>
+        <br /><br />
+        <%= form_tag course_enrollments_path(@course) do %>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-email="<%= current_user.email %>"
+                  data-description="Now You Cook! - <%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                  data-amount="<%= (@course.cost * 100).to_i %>"
+                  data-locale="auto"></script>
+          <% end %>
+        <% end %>
+        <% end %>
+        <% else %>
+        <h3 class="badge badge-info">Sign In To Enroll!</h3>
         <% end %>
       </div>
       
