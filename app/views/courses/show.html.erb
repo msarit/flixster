@@ -1,10 +1,15 @@
 <div class="booyah-box col-10 offset-1">
-  <h1><%= @course.title %></h1>
-  
-  <% if @course.image.present? %>
-  <%= image_tag @course.image, class: 'img-fluid' %>
-  <% end %>
+  <h1 class="text-center"><%= @course.title %></h1>
+
   <br />
+  
+  <div class="text-center">
+    <% if @course.image.present? %>
+      <%= image_tag @course.image, class: 'img-fluid' %>
+    <% end %>
+  </div>
+
+  <br /><br />
     
     <div class="row">
       
