@@ -27,7 +27,7 @@
         <%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
         
         <ul>
-          <% section.lessons.each do |lesson| %>
+          <% section.lessons.rank(:row_order).each do |lesson| %>
             <li>
             <strong><%= lesson.title %></strong>
             -
