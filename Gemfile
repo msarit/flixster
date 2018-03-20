@@ -68,3 +68,4 @@ gem 'carrierwave-aws'
 gem 'stripe'
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+gem 'rails_12factor', group: :production
