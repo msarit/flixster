@@ -2,36 +2,47 @@
   <h1 class="text-center"><%= current_course.title %></h1>
 
 <!-- Code for Sorting Lessons Within Sections -->
-  <script>
-    $(function() {
-      $('.lessons').sortable({
-        update: function(event,ui) {
-          $.ajax({
-            type: 'PUT',
-            url: ui.item.data('update-url'),
-            dataType: 'json',
-            data: { lesson: { row_order_position: ui.item.index() }}
-          });
-        }
-      });
+<script>
+  $(function() {
+    $('.lessons').sortable({
+      update: function(event,ui) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { lesson: { row_order_position: ui.item.index() }}
+        });
+      }
     });
-  </script>
+  });
+</script>
 
 <!-- Code for Sorting Sections Within Courses -->
-  <script>
-    $(function() {
-      $('.sections').sortable({
-        update: function(event,ui) {
-          $.ajax({
-            type: 'PUT',
-            url: ui.item.data('update-url'),
-            dataType: 'json',
-            data: { section: { row_order_position: ui.item.index() }}
-          });
-        }
-      });
+<script>
+  $(function() {
+    $('.sections').sortable({
+      update: function(event,ui) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() }}
+        });
+      }
     });
-  </script>
+  });
+</script>
+
+  <!-- Code to Listen for Clicks of "New Lesson" Button  -->
+
+<script>
+  $(function() {
+    $('.new-lesson-button').click(function(event) {
+      var lessonUrl = $(event.target).data('lesson-url');
+      $('#newLessonForm').attr('action', lessonUrl);
+    });
+  });
+</script>
 
   <br />
 
@@ -65,7 +76,9 @@
           <span class="fa fa-ellipsis-v"></span>
             <%= section.title %>
           </div>
-            <%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
+            <button type="button" class="btn btn-primary btn-sm float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+              Add New Lesson
+            </button>
             <br class="clr" />
             <br class="clr" />
           
@@ -123,6 +136,35 @@
       </div>
         <% end %>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="newLessonModalLabel">Add New Lesson</h4>
+      </div>
+      
+      <%= simple_form_for @lesson, url: '#', html: { id: 'newLessonForm' } do |f| %>
+      <div class="modal-body">
+        <%= f.input :title %>
+        <%= f.input :subtitle %>
+        <%= f.label 'Attach Video File' %>
+        <%= f.input :video %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add Lesson", class: 'btn btn-primary' %>
+    <% end %>
+      </div>
     </div>
   </div>
 </div>
