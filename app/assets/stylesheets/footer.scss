@@ -21,6 +21,7 @@ body {
   font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
   padding: 10px 0px;
   margin-top: 30px;
+  font-weight: 100px;
 }
 
 #footer a {
@@ -29,4 +30,12 @@ body {
 
 .footer-cont {
   padding-top: 15px;
+}
+
+.social-button {
+  margin: 10px 4px 4px 4px;
+}
+
+.social a:hover {
+  text-decoration: none;
 }

@@ -60,18 +60,34 @@
         <div class="col-12 col-sm">
           <h4>Instructors</h4>
           <%= link_to 'Teach A Course', new_instructor_course_path %>
+          <br />
+          <%= link_to 'My Dashboard', dashboard_path %>
           </div>
 
           <div class="col-12 col-sm">
           <h4>About</h4>
+          <%= link_to 'Team', '#' %>
+          <br />
+          <%= link_to 'Careers', '#' %>
+          <br />
+          <%= link_to 'Privacy Policy', '#' %>
           </div>
 
           <div class="col-12 col-sm">
           <h4>Contact</h4>
+          atim@gmx.com
+          <br />
+          Silver Spring MD, 20904
           </div>
 
-          <div class="col-12 col-sm">
+          <div class="col-12 col-sm social">
           <h4>Social</h4>
+          <%= link_to 'https://github.com/msarit',target: '_blank' do%>
+          <span class="fa fa-github fa-2x social-button"></span> <% end %>
+          <%= link_to 'https://facebook.com',target: '_blank' do%>
+          <span class="fa fa-facebook fa-2x social-button"></span> <% end %>
+          <%= link_to 'https://instagram.com',target: '_blank' do%>
+          <span class="fa fa-instagram fa-2x social-button"></span> <% end %>
           </div>
         
         </div>
