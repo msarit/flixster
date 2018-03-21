@@ -1,6 +1,7 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
 
+<!-- Code for Sorting Lessons Within Sections -->
   <script>
     $(function() {
       $('.lessons').sortable({
@@ -10,6 +11,22 @@
             url: ui.item.data('update-url'),
             dataType: 'json',
             data: { lesson: { row_order_position: ui.item.index() }}
+          });
+        }
+      });
+    });
+  </script>
+
+<!-- Code for Sorting Sections Within Courses -->
+  <script>
+    $(function() {
+      $('.sections').sortable({
+        update: function(event,ui) {
+          $.ajax({
+            type: 'PUT',
+            url: ui.item.data('update-url'),
+            dataType: 'json',
+            data: { section: { row_order_position: ui.item.index() }}
           });
         }
       });
@@ -35,9 +52,9 @@
       <br /><br />
     </div>
 
-    <ul>
-    <% current_course.sections.each do |section| %>
-      <li>
+    <ul class="sections">
+    <% current_course.sections.rank(:row_order).each do |section| %>
+      <li data-update-url="<%= instructor_section_path(section) %>">
         <%= section.title %>
         <%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
         
