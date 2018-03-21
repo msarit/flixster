@@ -1,9 +1,24 @@
 <div class="booyah-box col-10 offset-1 text-center">
-  <h1><%= current_lesson.title %></h1>
 
-  <p>
+
+  <h1><%= current_lesson.title %></h1>
+  
+  <p class="float-left">
     <%= current_lesson.subtitle %>
   </p>
+
+    <% if current_lesson.next_lesson.present? %>
+    <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default btn-sm float-right' do %>
+      Next Lesson &nbsp;
+      <span class="fa fa-forward"></span>
+      <% end %>
+    <% end %>
+    <br class="clr" />
+    <br />
+  
+
+ 
+
 
     <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto"
     poster="<%= image_path('egusi_soup.jpg') %>" data-setup="{}">
