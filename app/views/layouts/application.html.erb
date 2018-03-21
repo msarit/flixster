@@ -23,21 +23,21 @@
 
         <div class="collapse navbar-collapse right-align" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-link">
+            <li class="nav-item">
               <%= link_to 'See all Courses', courses_path, class: 'nav-link' %>
             </li>
           </ul>
           <ul class="navbar-nav">
             <% if user_signed_in? %>
-            <li class="nav-link">
-              <%= link_to 'Edit Profile', edit_user_registration_path %></li>
-              <li class="nav-link">
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <li class="nav-item">
+              <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link'  %></li>
+              <li class="nav-item">
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'  %></li>
               <% else %>
-            <li class="nav-link">
-              <%= link_to 'Register', new_user_registration_path %> </li>
-              <li class="nav-link">
-                <%= link_to 'Log In', new_user_session_path %></li>
+            <li class="nav-item">
+              <%= link_to 'Register', new_user_registration_path, class: 'nav-link'  %> </li>
+              <li class="nav-item">
+                <%= link_to 'Log In', new_user_session_path, class: 'nav-link'  %></li>
             <% end %>
           </ul>
         </div>
