@@ -53,6 +53,7 @@ a:hover {
 .feature {
   width: 100%;
   padding: 20px 5%;
+  margin-top: 20px;
 }
 
 p.alert {
@@ -90,7 +91,7 @@ label.control-label.file.optional, label.control-label.file.required {
 }
 
 .lesson {
-  background-color: black;
+  background-color: #383435;
   margin-top: 10px;
   height: 130px;
 }
@@ -130,7 +131,7 @@ ul .header .fa {
 }
 
 .lessons li {
-  background: black;
+  background: #383435;
   color: white;
   margin: 10px;
   padding: 8px;
@@ -145,3 +146,12 @@ ul .header .fa {
 .lessons li p {
   margin: 0;
 }
+
+.icon {
+  margin-bottom: 10px;
+}
+
+.profile-btn {
+  margin-top: 10px;
+}
+
