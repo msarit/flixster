@@ -27,6 +27,7 @@
           
             <% if @course.free? %>
               <%= link_to 'Enroll Now!', course_enrollments_path(@course), class: 'btn btn-primary btn-sm', method: :post %>
+              <br /><br />
           
             <% else %>
           
