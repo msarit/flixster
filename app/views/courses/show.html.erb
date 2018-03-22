@@ -46,7 +46,7 @@
         
         <% else %>
           
-          <h3 class="btn btn-info">Sign In<br /> To Enroll!</h3>
+          <%= link_to 'Sign In<br /> To Enroll!'.html_safe, new_user_session_path, class: 'btn btn-info' %>
 
         <% end %>
 
