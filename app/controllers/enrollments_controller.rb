@@ -18,14 +18,14 @@ class EnrollmentsController < ApplicationController
       description: 'Now You Cook content',
       currency: 'usd'
     )
-  end
+    end
 
-  current_user.enrollments.create(course: current_course)
-  redirect_to course_path(current_course)
-  rescue Stripe::CardError => e
+    current_user.enrollments.create(course: current_course)
+    redirect_to course_path(current_course)
+    
+    rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path
-
   end
 
   private

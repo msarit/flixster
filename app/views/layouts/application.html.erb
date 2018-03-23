@@ -27,65 +27,82 @@
               <%= link_to 'See all Courses', courses_path, class: 'nav-link' %>
             </li>
           </ul>
+          
           <ul class="navbar-nav">
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link'  %></li>
               <li class="nav-item">
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'  %></li>
-              <% else %>
-            <li class="nav-item">
-              <%= link_to 'Register', new_user_registration_path, class: 'nav-link'  %> </li>
+                <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link'  %>
+              </li>
+              
               <li class="nav-item">
-                <%= link_to 'Log In', new_user_session_path, class: 'nav-link'  %></li>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'  %>
+              </li>
+            <% else %>
+            
+              <li class="nav-item">
+                <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
+              </li>
+              
+              <li class="nav-item">
+                <%= link_to 'Log In', new_user_session_path, class: 'nav-link'  %>
+              </li>
             <% end %>
           </ul>
         </div>
       </nav>
 
-  <% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-  <% end %>
-  <% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+      <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+      <% end %>
+      
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
 
       <%= yield %>
-  </div>
+    </div>
 
-  <div id="footer">
-    <div class="container">
-      <div class="row text-center footer-cont">
+    <div id="footer">
+      <div class="container">
+        <div class="row text-center footer-cont">
         
-        <div class="col-12 col-sm">
-          <h4>Instructors</h4>
-          <%= link_to 'Teach A Course', new_instructor_course_path %>
-          <br />
-          <%= link_to 'My Dashboard', dashboard_path %>
-          <br />
-          <%= link_to 'Privacy Policy', privacy_path %>
+          <div class="col-12 col-sm">
+            <h4>Instructors</h4>
+            <%= link_to 'Teach A Course', new_instructor_course_path %>
+            
+            <br />
+          
+            <%= link_to 'My Dashboard', dashboard_path %>
+          
+            <br />
+            
+            <%= link_to 'Privacy Policy', privacy_path %>
           </div>
 
           <div class="col-12 col-sm">
-          <h4>Contact</h4>
-          info@nowyoucook.com
-          <br />
-          Silver Spring MD, 20904
+            <h4>Contact</h4>
+            info@nowyoucook.com
+            <br />
+            Silver Spring MD, 20904
           </div>
 
           <div class="col-12 col-sm social">
-          <h4>Social</h4>
-          <%= link_to 'https://github.com/msarit',target: '_blank' do%>
-          <span class="fa fa-github fa-2x social-button"></span> <% end %>
-          <%= link_to 'https://facebook.com',target: '_blank' do%>
-          <span class="fa fa-facebook fa-2x social-button"></span> <% end %>
-          <%= link_to 'https://instagram.com',target: '_blank' do%>
-          <span class="fa fa-instagram fa-2x social-button"></span> <% end %>
+            <h4>Social</h4>
+            <%= link_to 'https://github.com/msarit',target: '_blank' do%>
+              <span class="fa fa-github fa-2x social-button"></span>
+            <% end %>
+            
+            <%= link_to 'https://facebook.com',target: '_blank' do%>
+              <span class="fa fa-facebook fa-2x social-button"></span>
+            <% end %>
+            
+            <%= link_to 'https://instagram.com',target: '_blank' do%>
+              <span class="fa fa-instagram fa-2x social-button"></span>
+            <% end %>
           </div>
-        
         </div>
+      </div>
     </div>
-  </div>
 
 
     <script src="https://vjs.zencdn.net/6.6.3/video.js"></script>

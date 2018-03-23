@@ -14,40 +14,35 @@
   <div class="col-10 offset-1">
     <div class="row">  
       <div class="col-12 col-sm-2">  
-        <h5><span class="badge badge-success">
-          COST: <%= number_to_currency @course.cost %>
-        </span></h5>
+        <h5>
+          <span class="badge badge-success">
+            COST: <%= number_to_currency @course.cost %>
+          </span>
+        </h5>
         <br />
 
         <% if current_user %>
           <% if current_user.enrolled_in?(@course) %>
             <h3 class="btn btn-success btn-sm">You Are Enrolled!</h3>
-          
           <% else %>
-          
             <% if @course.free? %>
               <%= link_to 'Enroll Now!', course_enrollments_path(@course), class: 'btn btn-primary btn-sm', method: :post %>
-              <br /><br />
-          
-            <% else %>
-          
+              <br /><br />  
+            <% else %>        
               <%= form_tag course_enrollments_path(@course) do %>
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-email="<%= current_user.email %>"
-                    data-description="Now You Cook! - <%= @course.title %> (<%= number_to_currency @course.cost %>)"
-                    data-amount="<%= (@course.cost * 100).to_i %>"
-                    data-locale="auto">
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-email="<%= current_user.email %>"
+                  data-description="Now You Cook! - <%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                  data-amount="<%= (@course.cost * 100).to_i %>"
+                  data-locale="auto">
                 </script>
                 <br /><br />
               <% end %>
             <% end %>
           <% end %>
-        
         <% else %>
-          
           <%= link_to 'Sign In<br /> To Enroll!'.html_safe, new_user_session_path, class: 'btn btn-info' %>
-
         <% end %>
 
         <% if current_user && current_user == @course.user %> 
@@ -59,43 +54,35 @@
         
       <div class="col-12 col-sm-10">
         <%= @course.description %>
-        
         <br /><br />
-        
         <strong>COURSE INSTRUCTOR: <%= @course.user.fullname %></strong>
       </div>
         
       <div class="col-12">
-        <% @course.sections.rank(:row_order).each do |section| %>
-        
-        <br /><br />
-        
-        <div class="section">
-          <h3 class="text-center">
-            <%= section.title %>
-          </h3>
-          
-          <div class="row">
-            <% section.lessons.rank(:row_order).each do |lesson| %>
-              <div class="col-12 col-sm-6">
-                <div class="lesson text-center">
-                
-                <br />
-                  
-                  <%= link_to lesson_path(lesson) do %>
-                    <strong><%= lesson.title %></strong>
-                    
-                    <br />
-                    
-                    <%= lesson.subtitle %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
+        <% @course.sections.rank(:row_order).each do |section| %> 
+          <br /><br />
+          <div class="section">
+            <h3 class="text-center">
+              <%= section.title %>
+            </h3>
 
-          <br class="clr" />
-        </div>
+            <div class="row">
+              <% section.lessons.rank(:row_order).each do |lesson| %>
+                <div class="col-12 col-sm-6">
+                  <div class="lesson text-center">
+                    <br />
+                    <%= link_to lesson_path(lesson) do %>
+                      <strong><%= lesson.title %></strong>
+                      <br />
+                      <%= lesson.subtitle %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <br class="clr" />
+          </div>
         <% end %>
       </div>
 

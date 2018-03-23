@@ -3,49 +3,41 @@
     <div class="col-12 col-md-10 offset-1">
       <h1 class="text-center">Hello <%= current_user.fullname %>!</h1>
     </div>
+    
     <div class="col-12 col-md-1">
-  <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary btn-sm float-right profile-btn' %>
-  <br class="clr" />
+      <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary btn-sm float-right profile-btn' %>
+      <br class="clr" />
     </div>
-  
-</div>
+  </div>
 
   <hr class="col-8 offset-2" >
   <br class="clr" />
 
   <h2>What You're Learning</h2>
+  
   <% if current_user.enrolled_courses.empty? %>
     <br /><br />
     <p class="text-center">Not enrolled in any courses - <%= link_to courses_path do %> why not enroll now?<% end %></p>
-    
-    <% else %>
-    
+  <% else %>
     <% current_user.enrolled_courses.each do |course| %>
-    
       <h3 class="text-center"><%= link_to course.title, course_path(course) %></h3>
       <br />
-      
       <%= image_tag course.image, class: 'col-10 offset-1 img-fluid' %>
       <br /><br />
 
       <div class="col-10 offset-1">
         <div class="row">
-          <div class="col-12 col-sm-10">
-            
-            <p>
-            <%= course.description %>
-            </p>
+          <div class="col-12 col-sm-10"> 
+            <p><%= course.description %></p>
           </div>
     
           <div class="col-12 col-sm-2">
             <%= link_to 'More Info', course_path(course), class: 'btn btn-md btn-primary' %>
           </div>
-    
         </div>
       </div>
-
     <% end %>
-    <% end %>
+  <% end %>
 
   <br class="clr" />
   <hr class="col-8 offset-2" >
@@ -55,11 +47,12 @@
 
   <% if current_user.courses.empty? %>
     <br /><br />
-    <p class="text-center">Not teaching any courses - <%= link_to new_instructor_course_path do %> why not create a course now?<% end %></p>
+    <p class="text-center">
+      Not teaching any courses - <%= link_to new_instructor_course_path do %> why not create a course now?<% end %>
+    </p>
     
-    <% else %>
+  <% else %>
     <% current_user.courses.each do |course| %>
-    
       <h3 class="text-center"><%= link_to course.title, course_path(course) %></h3>
       <br />
       
@@ -69,19 +62,14 @@
       <div class="col-10 offset-1">
         <div class="row">
           <div class="col-12 col-sm-10">
-            <p>
-              <%= course.description %>
-            </p>
+            <p><%= course.description %></p>
           </div>
     
           <div class="col-12 col-sm-2">
             <%= link_to 'More Info', course_path(course), class: 'btn btn-md btn-primary' %>
           </div>
-
         </div>
       </div>
-
     <% end %>
-    <% end %>  
-
+  <% end %>  
 </div>

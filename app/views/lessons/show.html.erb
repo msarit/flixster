@@ -1,37 +1,27 @@
 <div class="booyah-box col-10 offset-1 text-center">
-
-
   <h1><%= current_lesson.title %></h1>
   
   <p class="float-left">
     <%= current_lesson.subtitle %>
   </p>
 
-    <% if current_lesson.next_lesson.present? %>
+  <% if current_lesson.next_lesson.present? %>
     <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default btn-sm float-right' do %>
-      Next Lesson &nbsp;
-      <span class="fa fa-forward"></span>
-      <% end %>
+      Next Lesson &nbsp; <span class="fa fa-forward"></span>
     <% end %>
-    <br class="clr" />
-    <br />
+  <% end %>
   
-
- 
-
-
-    <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto"
+  <br class="clr" />
+  <br />
+  
+  <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto"
     poster="<%= image_path('black.jpg') %>" data-setup="{}">
+    <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
       
-      <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
-      
-      <noscript>
+    <noscript>
       <p class="vjs-no-js">
-        To view this video please enable JavaScript, and consider upgrading to a web browser that
-        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
       </p>
-      </noscript>
-    
-    </video>
-  
+    </noscript>
+  </video>
 </div>

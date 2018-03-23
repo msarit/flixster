@@ -9,6 +9,4 @@ class Section < ApplicationRecord
     section = course.sections.where("row_order > ?", self.row_order).rank(:row_order).first
     return section
   end
-
-
 end
