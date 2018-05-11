@@ -53,21 +53,28 @@
       <% end %>
     </div>
   </div>
-    
+  
+  <br /><br />
+
   <div class="row">
-    <div class="col-10 offset-1">
-      <br />
-        <%= link_to 'Student View', course_path(current_course), class: 'btn btn-warning float-right' %>
-      <br />
-    
-      <br class="clr" />
-    
-      <div>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+    <div class="col-12 col-md-4 offset-2">
+      <span class="float-left">
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#newSectionModal">
           Add New Section
         </button>
-      </div>
+      </span>
+    </div>
+    <div class="col-12 col-md-4">
+      <span class="float-right">
+        <%= link_to 'Student View', course_path(current_course), class: 'btn btn-md btn-warning float-right' %>
+      </span>
+    </div>
+  </div>
+    
+  <br class="clr" />
 
+  <div class="row">
+    <div class="col-12 col-md-10 offset-1">
       <ul class="sections">
         <% current_course.sections.rank(:row_order).each do |section| %>
           <li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
