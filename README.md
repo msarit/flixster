@@ -1,24 +1,18 @@
-# README
+## Now You Cook!
+A two-sided video-streaming marketplace platform (inspired by Udemy).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Build status
 
-Things you may want to cover:
+(coming soon)
 
-* Ruby version
+## Screenshots
+![alt tag](https://image.ibb.co/n9fGFo/nowyoucook_screenshot.png)
 
-* System dependencies
+## Features
+* Built on Rails
+* Mobile-responsive
+* Credit card payment capabilities (via the Stripe API)
+* User role management (e.g. instructors and students)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Credits
+* [The Firehose Project](https://thefirehoseproject.com)
