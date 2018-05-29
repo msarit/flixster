@@ -1,0 +1,5 @@
+services:
+- postgresql
+before_script:
+- psql -c "CREATE DATABASE nomster_test;" -U postgres
+- psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
