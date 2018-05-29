@@ -1,4 +1,4 @@
-<kdb>
+<kbd>
 <img src="https://image.ibb.co/n9fGFo/nowyoucook_screenshot.png">
 </kbd>
 
