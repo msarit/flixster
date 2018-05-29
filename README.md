@@ -9,7 +9,7 @@ A two-sided video-streaming marketplace platform (inspired by Udemy).
 
 ## Build status
 
-(coming soon)
+[![Build Status](https://travis-ci.org/msarit/flixster.svg?branch=master)](https://travis-ci.org/msarit/flixster)
 
 ## Screenshots
 ![alt tag](https://image.ibb.co/n9fGFo/nowyoucook_screenshot.png)
