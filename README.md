@@ -1,6 +1,4 @@
-<kbd>
-<img src="https://image.ibb.co/n9fGFo/nowyoucook_screenshot.png">
-</kbd>
+![Screenshot](https://image.ibb.co/d91oYJ/github_nowyoucook.png)
 
 ## Now You Cook!
 A two-sided video-streaming marketplace platform (inspired by Udemy).
