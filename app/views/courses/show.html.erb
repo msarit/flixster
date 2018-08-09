@@ -13,7 +13,7 @@
     
   <div class="col-10 offset-1">
     <div class="row">  
-      <div class="col-12 col-lg-2">  
+      <div class="col-12 col-lg-3 center-button">  
         <h5>
           <span class="badge badge-success">
             COST: <%= number_to_currency @course.cost %>
@@ -42,7 +42,7 @@
             <% end %>
           <% end %>
         <% else %>
-          <%= link_to 'Sign In<br /> To Enroll!'.html_safe, new_user_session_path, class: 'btn btn-info' %>
+          <%= link_to 'Register<br /> To Enroll'.html_safe, new_user_session_path, class: 'btn btn-info' %>
         <% end %>
 
         <% if current_user && current_user == @course.user %> 
@@ -52,10 +52,12 @@
         <% end %>
       </div>
         
-      <div class="col-12 col-lg-10">
-        <%= @course.description %>
+      <div class="col-12 col-lg-9">
+        <div class="text-eq-justify" style="margin-top: 10px;">
+          <%= @course.description %>
+        </div>
         <br /><br />
-        <strong>COURSE INSTRUCTOR: <%= @course.user.fullname %></strong>
+        <strong>INSTRUCTOR: <%= @course.user.fullname %></strong>
       </div>
         
       <div class="col-12">

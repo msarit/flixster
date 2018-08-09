@@ -1,7 +1,7 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center">Learn Something New!</h1>
   
-  <hr class="col-8 offset-2" >
+  <hr class="col-11 col-md-8 offset-md-2" >
   <br class="clr" />
 
   <% @courses.each do |course| %>
@@ -9,22 +9,25 @@
     <br />
     
     <div class="row">
-      <div class="col-sm-8 col-12">
-        <%= course.description %>
+      <div class="col-md-8 col-12">
+        <div class="text-eq-justify">
+          <%= course.description %>
+        </div>
         <br /><br />
-        <strong>COURSE INSTRUCTOR: <%= course.user.fullname %></strong>
+        <strong>INSTRUCTOR: <%= course.user.fullname %></strong>
+        <br /><br />
+        <%= link_to 'More Details', course_path(course), class: 'btn btn-primary btn-large' %>
         <br /><br />
       </div>
       
-      <div class="col-sm-4 col-12 text-center">
+      <div class="col-md-4 col-12 text-center">
         <% if course.image.present? %>
           <%= image_tag course.image, class: 'img-fluid' %>
         <% end %>
-        <br /><br />
-        <%= link_to 'More Details', course_path(course), class: 'btn btn-primary btn-large' %>
       </div>
     </div>
     
+    <hr class="col-11 col-md-8 offset-md-2" >
     <br class="clr" />
   <% end %>
 </div>

@@ -93,7 +93,7 @@ label.control-label.file.optional, label.control-label.file.required {
 .lesson {
   background-color: #383435;
   margin-top: 10px;
-  height: 130px;
+  min-height: 130px;
 }
 
 .lesson a {
@@ -160,3 +160,21 @@ ul .header .fa {
   margin: auto;
 }
 
+.text-eq-justify {
+  text-align: justify;
+}
+
+.center-button {
+  text-align: center;
+}
+
+
+@media (max-width: 576px) {
+  .logofont {
+    font-size: 2.5rem;
+  }
+
+  .footer-title {
+    margin-top: 20px;
+  }
+}
