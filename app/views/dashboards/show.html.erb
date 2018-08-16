@@ -1,16 +1,16 @@
 <div class="booyah-box col-10 offset-1">
   <div class="row">
-    <div class="col-12 col-md-11">
-      <h1 class="text-center">Hello <%= current_user.fullname %>!</h1>
+    <div class="col-12 col-md-9">
+      <h1>Hello <%= current_user.fullname %>!</h1>
     </div>
     
-    <div class="col-12 col-md-1 text-center">
+    <div class="col-12 col-md-3 text-center">
       <%= link_to 'Edit Your Profile', edit_user_registration_path, class: 'btn btn-primary btn-sm profile-btn' %>
       <br class="clr" />
     </div>
   </div>
 
-  <hr class="col-8 offset-2" >
+  <hr />
   <br class="clr" />
 
   <h2>What You're Learning</h2>
